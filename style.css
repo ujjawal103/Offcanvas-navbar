@@ -1,0 +1,145 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+.main_box{
+       background: url(photo.jpg);
+       height: 100vh;
+       width: 100vw;
+       background-size: cover;
+}
+
+.btn_one i{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+.sidebar_menu{
+    position: fixed;
+    left: -300px;                      /* just for animation it will hide the aside box */
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);       /* white but transparent */
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5) ;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5) ;
+    height: 60px;
+
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two i{
+     color: grey;
+     font-size: 20px;
+     line-height: 60px;
+     position: absolute;
+     left: 260px;
+     opacity: 0.6;
+     cursor: pointer;
+     transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+
+}
+.sidebar_menu .menu li{
+   margin-top: 6px;
+   padding: 14px 20px;
+}
+.sidebar_menu .menu i,a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i{
+    padding-right: 8px;
+}
+
+.sidebar_menu .social_media{
+    
+    position: absolute;          /*    absolute is just relative to their parent element but fixed is directly relative to body.*/
+    left: 64px;
+    bottom: 60px;
+}
+
+.sidebar_menu .social_media i{
+    color: white;
+    opacity: 0.5;
+    padding: 0 5px;
+}
+
+/* To hide the checkbox. */
+
+#check{
+    display: none;
+}
+
+
+
+/* Basic Css Completed */
+
+.sidebar_menu .menu li:hover{
+      box-shadow: 0 0 4px rgba(255,255,255,0.5);
+}
+
+.btn_one i:hover{
+    /* font-size: 40px; */
+    transform: scale(1.1);
+}
+.btn_two i:hover{
+    /* font-size: 40px; */
+    transform: scale(1.5);
+}
+
+.sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+/* Now cONTROLLING oUR CHECK bOX FOR ANIMATION CHANGES ON BEHALF OF BOTH BUTTONS */
+
+  #check:checked ~ .sidebar_menu{
+     left: 0;                      /*    As checked the box by any buttons it will again show and whenever we clicked btn_two it get unchecked and in this condition the sidebar allign -300px left from the screen . */
+  }
+
+
+  /* ~ is a selector in css that selects the sibling of that element; */
+
+  #check:checked ~ .btn_one i{
+    opacity: 0;
+  }
+  .sidebar_menu .btn_two i:hover{
+    opacity: 1;
+  }
